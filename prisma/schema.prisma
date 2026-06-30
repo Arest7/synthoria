@@ -1,0 +1,101 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
+}
+
+
+// Admins for managing content
+model User {
+  id        String   @id @default(uuid())
+  username  String   @unique
+  password  String   // Hashed password
+  role      String   @default("ADMIN")
+  createdAt DateTime @default(now())
+}
+
+// MIDI Music Files
+model MidiFile {
+  id             String         @id @default(uuid())
+  title          String
+  composer       String
+  description    String?
+  grade          Int            // 5, 6, or 7
+  genre          String
+  difficulty     String         // EASY, MEDIUM, HARD
+  fileUrl        String         // Path to MIDI file
+  audioUrl       String?        // Optional MP3/OGG preview (fallback)
+  fileSize       String
+  duration       String
+  downloadCount  Int            @default(0)
+  playCount      Int            @default(0)
+  isFeatured     Boolean        @default(false)
+  compatSoftware String[]       // Compatible software names (e.g. Synthesia)
+  educationalNote String?       // Academic notes for teachers/students
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+  favorites      FavoriteMidi[]
+}
+
+// PDF Sheet music or Methodical brochures
+model PdfDocument {
+  id            String   @id @default(uuid())
+  title         String
+  description   String?
+  grade         Int?     // Optional association with a grade
+  fileUrl       String
+  fileSize      String
+  downloadCount Int      @default(0)
+  createdAt     DateTime @default(now())
+}
+
+// Educational Software detailed information
+model SoftwareProgram {
+  id          String   @id @default(uuid())
+  name        String   @unique
+  slug        String   @unique // e.g. seemusic, synthesia
+  logoUrl     String?  // Optional custom icon
+  iconColor   String   // Tailwind color class for card highlight
+  description String
+  purpose     String
+  eduValue    String   // Educational value section
+  advantages  String[] // Bullet points of features
+  howToUse    String   // How students use it
+  formats     String[] // Supported formats like MIDI, PDF, XML
+  websiteUrl  String
+  createdAt   DateTime @default(now())
+}
+
+// Dissertation Publications, Research logs, or News
+model Publication {
+  id        String   @id @default(uuid())
+  title     String
+  content   String
+  category  String   // NEWS, RESEARCH, METHODICAL
+  fileUrl   String?  // Attachment
+  date      DateTime @default(now())
+}
+
+// Analytical logs of interactions
+model StatLog {
+  id        String   @id @default(uuid())
+  type      String   // DOWNLOAD_MIDI, DOWNLOAD_PDF, PLAY_MIDI, PAGE_VIEW
+  itemId    String
+  title     String
+  timestamp DateTime @default(now())
+}
+
+// Track favorites per IP/Session for guest users
+model FavoriteMidi {
+  id         String   @id @default(uuid())
+  midiId     String
+  midi       MidiFile @relation(fields: [midiId], references: [id], onDelete: Cascade)
+  visitorIp  String
+  createdAt  DateTime @default(now())
+
+  @@unique([midiId, visitorIp])
+}

@@ -1,0 +1,35 @@
+[
+  {
+    "id": "1",
+    "title": "Musiqa ta‘limida AKT imkoniyatlari",
+    "description": "Umumta‘lim maktablarida musiqa darslarini interaktiv o‘rgatish bo‘yicha metodik tavsiyanomalar to‘plami.",
+    "grade": null,
+    "fileUrl": "/uploads/didactic_opportunities.pdf",
+    "fileSize": "2.4 MB",
+    "downloadCount": 124,
+    "createdAt": "2026-06-27T08:08:35.558Z",
+    "updatedAt": "2026-06-27T08:08:35.558Z"
+  },
+  {
+    "id": "2",
+    "title": "5-sinf Musiqa darsligi notalar to‘plami",
+    "description": "5-sinf darsligiga kiritilgan barcha qo‘shiq va kuylarning to‘liq pianino va vokal notalari klaviri.",
+    "grade": 5,
+    "fileUrl": "/uploads/grade5_sheets.pdf",
+    "fileSize": "4.8 MB",
+    "downloadCount": 86,
+    "createdAt": "2026-06-27T08:08:35.558Z",
+    "updatedAt": "2026-06-27T08:08:35.558Z"
+  },
+  {
+    "id": "3",
+    "title": "Musiqiy estetik kompetensiyani rivojlantirish",
+    "description": "Musiqa o‘qitishda vizual-eshitish didaktikasidan foydalanish bo‘yicha magistrlik dissertatsiyasining amaliy ilovasi.",
+    "grade": null,
+    "fileUrl": "/uploads/aesthetic_competence_framework.pdf",
+    "fileSize": "1.9 MB",
+    "downloadCount": 95,
+    "createdAt": "2026-06-27T08:08:35.558Z",
+    "updatedAt": "2026-06-27T08:08:35.558Z"
+  }
+]

@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+ECHO is off.
+# Next.js
+.next/
+out/
+ECHO is off.
+# Environment
+.env
+.env.local
+.env.production
+.env.development
+!.env.example
+ECHO is off.
+# Logs
+*.log
+npm-debug.log*
+ECHO is off.
+# TypeScript
+*.tsbuildinfo
+ECHO is off.
+# Build
+dist/
+coverage/
+ECHO is off.
+# IDE
+.vscode/
+.idea/
+ECHO is off.
+# OS
+.DS_Store
+Thumbs.db

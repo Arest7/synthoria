@@ -1,0 +1,33 @@
+# Never send host node_modules to the Docker build context.
+# Docker installs its own Linux-native modules inside the container.
+node_modules
+.next
+.git
+.gitignore
+
+# Env files (use docker-compose environment instead)
+.env.local
+.env.development
+
+# OS/Editor artifacts
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Test files
+coverage
+__tests__
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx
+
+# Docker files themselves
+Dockerfile*
+docker-compose*

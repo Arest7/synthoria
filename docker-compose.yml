@@ -1,0 +1,46 @@
+services:
+  # Database Service (PostgreSQL)
+  db:
+    image: postgres:16-alpine
+    container_name: artistic_education_db
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin_secure_password
+      POSTGRES_DB: artistic_education
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin -d artistic_education"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  # Next.js Web Application
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: artistic_education_web
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=postgresql://admin:admin_secure_password@db:5432/artistic_education?schema=public
+      - JWT_SECRET=super-secret-jwt-key-change-this-in-production-123456
+      - STORAGE_TYPE=local
+      - UPLOAD_DIR=./public/uploads
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      # Persist uploaded MIDI, PDF and image files across container restarts
+      - uploads_data:/app/public/uploads
+
+volumes:
+  pgdata:
+    driver: local
+  uploads_data:
+    driver: local
