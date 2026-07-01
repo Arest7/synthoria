@@ -82,6 +82,17 @@ export default function HomePage() {
               {t.home.heroSubtitle}
             </motion.p>
 
+            <motion.div
+              className="p-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md max-w-2xl text-slate-200 text-xs md:text-sm leading-relaxed shadow-lg"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.35 }}
+            >
+              <p className="font-semibold italic leading-relaxed">
+                “{t.home.heroConcept}”
+              </p>
+            </motion.div>
+
             {/* CTAs Grade Links */}
             <motion.div
               className="flex flex-wrap gap-4 pt-4"

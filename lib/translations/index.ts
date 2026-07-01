@@ -56,6 +56,7 @@ export const translations = {
     home: {
       heroTitle: 'Oʻquvchilarning badiiy-estetik mahoratini zamonaviy IT vositasida rivojlantirish texnologiyasi (5–7-sinflar misolida)',
       heroSubtitle: '5-7 sinflar uchun raqamli va interaktiv musiqiy ta’lim platformasi',
+      heroConcept: 'Badiiy-estetik mahorat — o‘quvchining musiqiy asarni emotsional idrok etishi, estetik baholashi, ijodiy talqin qilishi va ifodali ijro eta olishiga oid integrativ shaxsiy xususiyat sifatida namoyon bo‘ladi. Mazkur sifat o‘quvchining musiqiy-estetik tajribasi, badiiy tafakkuri, emotsional sezgirligi hamda ijodiy faolligi uyg‘unligida namoyon bo‘ladi.',
       cta5: '5-Sinf dasturi',
       cta6: '6-Sinf dasturi',
       cta7: '7-Sinf dasturi',
@@ -256,6 +257,7 @@ export const translations = {
     home: {
       heroTitle: 'Технология развития художественно-эстетического мастерства учащихся посредством современных ИКТ-средств (на примере 5-7 классов)',
       heroSubtitle: 'Цифровая и интерактивная платформа музыкального образования для 5–7 классов',
+      heroConcept: 'Художественно-эстетическое мастерство проявляется как интегративное личностное качество, связанное с эмоциональным восприятием учащимся музыкального произведения, его эстетической оценкой, творческой интерпретацией и способностью к выразительному исполнению. Данное качество выражается в гармонии музыкально-эстетического опыта, художественного мышления, эмоциональной отзывчивости и творческой активности учащегося.',
       cta5: 'Программа 5-Класса',
       cta6: 'Программа 6-Класса',
       cta7: 'Программа 7-Класса',
@@ -456,6 +458,7 @@ export const translations = {
     home: {
       heroTitle: "Technology for Developing Students' Artistic and Aesthetic Mastery Using Modern IT Tools (On the Example of Grades 5–7)",
       heroSubtitle: 'Interactive Digital Music Education Platform for Grades 5–7',
+      heroConcept: 'Artistic and aesthetic mastery manifests as an integrative personal quality related to the student\'s emotional perception of a musical work, aesthetic evaluation, creative interpretation, and ability to perform expressively. This quality is expressed in the harmony of the student\'s musical-aesthetic experience, artistic thinking, emotional sensitivity, and creative activity.',
       cta5: 'Grade 5 Program',
       cta6: 'Grade 6 Program',
       cta7: 'Grade 7 Program',
